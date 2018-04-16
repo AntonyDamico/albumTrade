@@ -1,6 +1,6 @@
-<% include partials/header %>
+<% include ../partials/header %>
 
-<!-- Bienvenida y search -->
+  <!-- Bienvenida y search -->
   <div class="section">
     <div class="row">
       <div class="col m8 offset-m2">
@@ -39,31 +39,33 @@
   </div>
   <!-- Fin de bienvenida -->
 
+
   <div class="container">
     <div class="row">
-
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image album-image">
-            <img src="https://lastfm-img2.akamaized.net/i/u/300x300/5a63743f4ba244678b74d90ad868504f.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light" href="#">
-              <i class="material-icons">add</i>
-            </a>
-          </div>
-          <div class="card-content album">
-            <span class="card-title">
-              <a href="#">Sgt. Peppers Lonely Hearts Club Band</a>
-            </span>
-            <ul>
-              <li>The Beatles</li>
-              <li>1967</li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <a href="#" class="blue-text">Ver Más</a>
+      <% albums.forEach(function(album){ %>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image album-image">
+              <img src="<%= album.cover %>">
+              <a class="btn-floating halfway-fab waves-effect waves-light" href="#">
+                <i class="material-icons">add</i>
+              </a>
+            </div>
+            <div class="card-content album">
+              <span class="card-title">
+                <a href="#"><%= album.name %></a>
+              </span>
+              <ul>
+                <li><%= album.band %></li>
+                <li><%= album.year %></li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#" class="blue-text">Ver Más</a>
+            </div>
           </div>
         </div>
-      </div>
+        <% }); %>
 
     </div>
   </div>
@@ -102,5 +104,4 @@
   <br>
   <!-- Final de paginación -->
 
-<% include partials/footer %>
- 
+  <% include ../partials/footer %>

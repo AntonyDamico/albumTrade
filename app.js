@@ -23,15 +23,31 @@ app.get("/", function(req, res) {
 });
 
 // INDEX
-app.get("/index", function(req, res) {
+app.get("/albums", function(req, res) {
   Album.find({}, function(err, allAlbums) {
     if (err) {
       console.log(err);
     } else {
-      res.render("index", { albums: allAlbums });
+      res.render("albums/index", { albums: allAlbums });
     }
   });
 });
+
+//Create
+app.post("/albums", function(req, res){
+  Album.create(req.body.album, function(err, newAlbum){
+    if(err){
+      console.log(err);
+    } else {
+      res.redirect("/albums");
+    }
+  })
+})
+
+// New
+app.get("/albums/new", function(req, res) {
+  res.render("albums/new")
+})
 
 app.listen(3000, function() {
   console.log("conectado en servidor 3000");
