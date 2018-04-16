@@ -1,0 +1,55 @@
+body {
+  background: rgb(240, 240, 240);
+  font-family: 'Roboto 2';
+}
+
+.banner-text {
+  background-color: rgba(0,0,0,.5);
+  margin: 0 auto;
+  width: 60%;
+}
+
+.btn-large {
+  margin: 20px;
+}
+
+nav {
+  color: black !important;
+}
+
+nav ul li a{
+  color: black;
+}    
+
+.parallax-container {
+  color: rgba(255,255,255,.9);
+}
+
+.body-icon {
+  font-size: 1em;
+}
+
+.card-content * {
+  line-height: 2rem;
+  color: black;
+}
+
+.album {
+  height: 202px;
+}
+
+.card-image:hover img {
+  filter: grayscale(75%);
+  transition: filter 0.7s;
+}
+
+.card-image>a {
+  transform: scale(0)
+}
+
+.card-image:hover>a {
+  transform: scale(1.25);
+}
+
+
+
