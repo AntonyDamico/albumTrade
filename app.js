@@ -34,21 +34,33 @@ app.get("/albums", function(req, res) {
 });
 
 //Create
-app.post("/albums", function(req, res){
-  Album.create(req.body.album, function(err, newAlbum){
-    if(err){
+app.post("/albums", function(req, res) {
+  Album.create(req.body.album, function(err, newAlbum) {
+    if (err) {
       console.log(err);
     } else {
       res.redirect("/albums");
     }
-  })
-})
+  });
+});
 
 // New
 app.get("/albums/new", function(req, res) {
-  res.render("albums/new")
-})
+  res.render("albums/new");
+});
 
+// Show
+app.get("/albums/:id", function(req, res) {
+  Album.findById(req.params.id, function(err, foundAlbum) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("albums/show", { album: foundAlbum });
+    }
+  });
+});
+
+// Server listening
 app.listen(3000, function() {
   console.log("conectado en servidor 3000");
 });

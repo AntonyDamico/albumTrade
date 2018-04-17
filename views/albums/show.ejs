@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col m3">
+
+      </div>
+
+      <div class="col m9">
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col m6">
+                <img src="<%= album.cover %>">
+              </div>
+              <div class="col m6">
+                <h4><%= album.name %></h4>
+                <h5>Artista: <%= album.band %></h5>
+                <h5>Año: <%= album.year %></h5>
+              </div>
+            </div>
+            <div class="row center">
+                <a href="#" class="btn waves-effect waves-light">Solicitar Cambio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <% include ../partials/footer %>
